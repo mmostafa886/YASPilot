@@ -14,5 +14,6 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - uses: actions/checkout@v2
       - name: Run Appium Tests
-      - run: mvn clean test -Pandroid
+        run: mvn clean test -Pandroid
