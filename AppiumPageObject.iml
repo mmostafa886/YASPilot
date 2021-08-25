@@ -6,9 +6,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/allure-results" />
       <excludeFolder url="file://$MODULE_DIR$/ScreenShots" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -50,7 +50,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-core:5.3.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-jcl:5.3.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-expression:5.3.4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.aspectj:aspectjweaver:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:7.4.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.78" level="project" />
@@ -148,5 +147,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jooq:joor-java-8:0.9.14" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-test-filter:2.14.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.aspectj:aspectjweaver:1.9.7" level="project" />
   </component>
 </module>

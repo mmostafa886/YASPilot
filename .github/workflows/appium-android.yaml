@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Appium Tests
-        run: mvn clean test -Pandroid && allure serve allure-results
+        run: mvn clean test -Pandroid && mvn allure:report
       - name: Test Reporter
         uses: dorny/test-reporter@v1.5.0
 
