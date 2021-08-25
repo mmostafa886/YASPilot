@@ -22,6 +22,6 @@ jobs:
         if: success() || failure()    # run this step even if previous step failed
         with:
           name: YASPilot Results      # Name of the check run which will be created
-          path: target/surefire-reports/testng-*.xml    # Path to test results
+          path: target/surefire-reports/TEST-*.xml    # Path to test results
           reporter: jest-junit        # Format of test results
 
