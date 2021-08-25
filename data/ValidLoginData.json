@@ -4,16 +4,6 @@
       "username": "mohamed+11sbk@yas.life",
       "password": "Test",
       "HeaderTxt": "Login"
-    },
-    {
-      "username": "mohamed+11@yas.life",
-      "password": "Test@123",
-      "HeaderTxt": "Login"
-    },
-    {
-      "username": "mohamed+11sbk@yas.life",
-      "password": "Test@123",
-      "HeaderTxt": "Dashboard"
     }
   ]
 }
