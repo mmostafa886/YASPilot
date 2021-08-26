@@ -16,10 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Appium Tests
-        run: mvn clean test -Pandroid && mvn allure:report
-      - name: YAS Test Report
-        uses: EnricoMi/publish-unit-test-result-action/composite@v1
-        if: always()
+        run: mvn clean test -Pandroid -Dmaven.test.failure.ignore=true
+      - name: Publish Test Report
+        uses: starburstdata/action-testng-report@v1
         with:
-          files: target/surefire-reports/*.xml
+            check_name: ”YAS Pilot”
+
+
 
