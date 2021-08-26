@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Appium Tests
-        run: mvn clean test -Pandroid -Dmaven.test.failure.ignore=true
+        run: mvn clean test -Pandroid -Dmaven.test.failure.ignore=true && mvn allure:report
 
       - name: Publish Test Report
         uses: starburstdata/action-testng-report@v1.0.2
@@ -32,8 +32,8 @@ jobs:
           path: target/surefire-reports/junitreports/*.xml    # Path to test results
           reporter: java-junit       # Format of test results
 
-      - name: Test local action
-        uses: ./allure-report-action
+      - name: Test marketplace action
+        uses: simple-elf/allure-report-action@master
         if: always()
         id: allure-report
         with:
