@@ -32,12 +32,12 @@ jobs:
           path: target/surefire-reports/junitreports/*.xml    # Path to test results
           reporter: java-junit       # Format of test results
 
-      - name: Allure report
-        uses: afiore/action-allure-report@v0.1.0
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
         with:
           allure_results: target/allure-results
           allure_report: target/site
-          results-dir: target/allure-results
-          report-dir: target/site
 
 
