@@ -32,6 +32,7 @@ jobs:
           name: TestReporter            # Name of the check run which will be created
           path: target/surefire-reports/junitreports/*.xml    # Path to test results
           reporter: java-junit       # Format of test results
+          fail-on-error: false
 
       - name: Publish Test Report3
         if: ${{ always() }}
