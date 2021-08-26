@@ -21,6 +21,7 @@ jobs:
         uses: starburstdata/action-testng-report@v1.0.2
         with:
             check_name: ”YAS Pilot”
+            github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
