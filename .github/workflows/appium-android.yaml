@@ -32,10 +32,12 @@ jobs:
           path: target/surefire-reports/junitreports/*.xml    # Path to test results
           reporter: java-junit       # Format of test results
 
-      - name: Get Allure history
+      - name: Test local action
+        uses: ./allure-report-action
         if: always()
-        continue-on-error: true
+        id: allure-report
         with:
           allure_results: target/allure-results
+          gh_pages: gh-pages
           allure_report: target/site
           allure_history: allure-history
