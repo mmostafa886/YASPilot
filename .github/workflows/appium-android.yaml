@@ -35,8 +35,4 @@ jobs:
 
       - name: Publish Test Report3
         if: ${{ always() }}
-
         uses: scacap/action-surefire-report@v1
-
-      - name: Allure report V2
-        uses: QuintilianoNery/action-allure-report-V2@0.2.0
