@@ -33,7 +33,6 @@ jobs:
           reporter: java-junit       # Format of test results
 
       - name: Get Allure history
-        uses: actions/checkout@v2
         if: always()
         continue-on-error: true
         with:
