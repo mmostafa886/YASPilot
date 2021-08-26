@@ -22,7 +22,7 @@ import javax.imageio.ImageIO;
 
 public class ScreenBase {
 
-    AppiumDriver driver;
+  AppiumDriver driver;
    public static final long WAIT = 7;
    GetTimeStamp gtStamp;
 
