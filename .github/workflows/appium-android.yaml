@@ -32,6 +32,6 @@ jobs:
           path: target/surefire-reports/junitreports/*.xml    # Path to test results
           reporter: java-junit       # Format of test results
 
-      - name: Publish Test Report
+      - name: Publish Test Report3
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
