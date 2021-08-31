@@ -7,6 +7,7 @@
     <test name="iOS">
         <classes>
             <class name="LoginTest_iOS"/>
+            <class name="LoginTest_Android"/>
         </classes>
     </test>
 </suite>

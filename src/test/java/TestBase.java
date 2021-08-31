@@ -2,9 +2,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.ITestContext;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,6 +12,7 @@ public class TestBase {
 
 
     public static void Android_Setup() throws MalformedURLException {
+
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
@@ -23,6 +21,7 @@ public class TestBase {
         caps.setCapability("appPackage", "com.sbk.yas.app.stage");
         caps.setCapability("appActivity", "com.yaslife.app.MainActivity");
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
+
     }
 
     public static void iOS_Setup() throws MalformedURLException {

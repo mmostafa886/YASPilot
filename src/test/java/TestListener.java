@@ -1,12 +1,13 @@
-package AutoListeners;
-
+import ScreenObjects.ScreenBase;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import java.io.IOException;
 
 
+public class TestListener extends TestBase  implements ITestListener {
 
-public class TestListener implements ITestListener {
+    ScreenBase scrnBase;
 
     @Override
     public void onFinish(ITestContext arg0) {
@@ -28,6 +29,14 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult arg0) {
+        scrnBase = new ScreenBase(driver);
+        String name = arg0.getInstanceName()+"-"+arg0.getName();
+        try {
+            scrnBase.takeScreenShot(name);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         System.out.println("The TC: "+ arg0.getName()+" has been Failed");
     }
 
@@ -39,6 +48,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult arg0) {
+        scrnBase = new ScreenBase(driver);
         System.out.println("The TC: "+ arg0.getName()+" has been Started");
 
     }

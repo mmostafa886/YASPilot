@@ -10,7 +10,6 @@ public class SharedScreen extends ScreenBase{
         super(appiumDriver);
     }
 
-    //@AndroidFindBy(xpath = "//*/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.View")
     @AndroidFindBy(xpath = "(//android.view.View)[1]")
     @iOSXCUITFindBy(xpath = "//*[@x = '0' and @width = '414' and @height = '44']")
     public MobileElement screenHeader;

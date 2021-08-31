@@ -1,18 +1,11 @@
 import ScreenObjects.LoginScreen;
 import ScreenObjects.ScreenBase;
 import ScreenObjects.SharedScreen;
-import io.appium.java_client.ios.IOSTouchAction;
-import io.appium.java_client.touch.offset.ElementOption;
-import org.openqa.selenium.remote.SessionId;
 import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.text.ParseException;
 
 import utils.JsonValidLogin;
@@ -27,7 +20,7 @@ public class LoginTest_Android extends TestBase{
 
 
     @DataProvider(name = "LoginData")
-    public Object[][] passData() throws IOException, ParseException, org.json.simple.parser.ParseException {
+    public Object[][] passData() throws Exception {
         return JsonValidLogin.getJsonData
                 (System.getProperty("user.dir")+"/data/ValidLoginData.json",
                         "Login Data",3);
@@ -45,9 +38,7 @@ public class LoginTest_Android extends TestBase{
         lgnScrn.clickLogin02();
         shrdScrn.waitForinVisibility(shrdScrn.progressBar);
 
-      /* System.out.println((shrdScrn.getAttribute(shrdScrn.screenHeader, "text")));//print the screen header text
-
-         //Take a screenshot for the screen header in case the retrieved text is not as expected
+          /* //Take a screenshot for the screen header in case the retrieved text is not as expected
         if(!(shrdScrn.getAttribute(shrdScrn.screenHeader, "text").contains(hText))) {
             sBase.takeElementScreenShot(shrdScrn.screenHeader, "Android/Failures");
         }*/
@@ -55,8 +46,8 @@ public class LoginTest_Android extends TestBase{
     }
 
     @AfterMethod
-    public void takeScreenShotOnFailure(ITestResult iTestResult) throws IOException {
-        sBase = new ScreenBase(driver);
+    public void takeScreenShotOnFailure(ITestResult iTestResult) throws Exception {
+   /*     sBase = new ScreenBase(driver);
        // sBase.takeScreenShot("Android"); //To take screenshot whatever the test result is
 
         //The following Try & Catch are for taking screenshot in case of failure
@@ -68,7 +59,7 @@ public class LoginTest_Android extends TestBase{
             }
         } catch (Exception e) {
         }
-
+*/
         tearDown();
 
     }

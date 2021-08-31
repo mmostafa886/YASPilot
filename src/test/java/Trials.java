@@ -2,20 +2,14 @@ import ScreenObjects.LoginScreen;
 import ScreenObjects.ScreenBase;
 import ScreenObjects.SharedScreen;
 import io.appium.java_client.ios.IOSTouchAction;
-import io.appium.java_client.touch.offset.ElementOption;
+
 import org.testng.Assert;
-import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utils.JsonValidLogin;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.text.ParseException;
-
 
 public class Trials extends TestBase{
 
@@ -63,7 +57,7 @@ public class Trials extends TestBase{
     }
 
     @AfterMethod
-    public void takeScreenShotOnFailure(ITestResult iTestResult) throws IOException {
+    public void takeScreenShotOnFailure(ITestResult iTestResult) {
         sBase = new ScreenBase(driver);
         // sBase.takeScreenShot("Android"); //To take screenshot whatever the test result is
 
@@ -75,6 +69,7 @@ public class Trials extends TestBase{
                 }
             }
         } catch (Exception e) {
+
         }
 
         tearDown();
