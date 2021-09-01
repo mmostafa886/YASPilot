@@ -11,6 +11,17 @@ public class TestBase {
     public static AppiumDriver driver;
 
 
+    public void AndroidEmulator_setup() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("automationName", "UiAutomator2");
+        caps.setCapability("platformVersion", "9");
+        caps.setCapability("deviceName", "NexusAndroid9");
+        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
+
+        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
+    }
+
     public static void Android_Setup() throws MalformedURLException {
 
         DesiredCapabilities caps = new DesiredCapabilities();
