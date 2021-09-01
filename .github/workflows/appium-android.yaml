@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Appium Tests
-        run: mvn clean test -Pandroid -Dmaven.test.failure.ignore=true
+        run: mvn clean test -Psim -Dmaven.test.failure.ignore=true
 
       - name: Publish Test Report
         uses: starburstdata/action-testng-report@v1.0.2

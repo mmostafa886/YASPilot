@@ -17,6 +17,7 @@ public class TestBase {
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "9");
         caps.setCapability("deviceName", "NexusAndroid9");
+        caps.setCapability("avd","NexusAndroid9");
         caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
