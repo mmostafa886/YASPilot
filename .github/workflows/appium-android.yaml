@@ -5,9 +5,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ main ]
+   # branches: [ main ] #Remove this hash if you want to execute the the script on Push to the main branch
   pull_request:
-    branches: [ main ]
+   # branches: [ main ] #Remove this hash if you want to execute the the script on Pull from the main branch
 
 jobs:
   build:
