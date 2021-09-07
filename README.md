@@ -1,2 +1,2 @@
 # YASPilot
-YASPilot project to check the Suitability of our apps with Appium 009
+YASPilot project to check the Suitability of our apps with Appium
