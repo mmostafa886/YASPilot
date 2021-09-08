@@ -14,6 +14,8 @@ import utils.GetTimeStamp;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.util.Base64;
 
 public class ScreenBase {
 
@@ -79,17 +81,16 @@ public class ScreenBase {
 
     public void takeScreenShot(String osName) throws IOException {
         gtStamp = new GetTimeStamp();
+        String destPath = System.getProperty("user.dir") +
+                "/ScreenShots/" + osName+"/"+ gtStamp.getCurrentTimeStamp() + ".jpg";
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destFile = new File(System.getProperty("user.dir") +
-                "/ScreenShots/" + osName+"/"+ gtStamp.getCurrentTimeStamp() + ".jpg");
+        String base64img1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+        File destFile = new File(destPath);
         FileUtils.copyFile(file, destFile);
-  /*      Reporter.log("<a href='" + destFile.getAbsolutePath() + "'>>>" + osName + "<<</a><br><br><br><br>");
+     /*   Reporter.log("<a href='" + destFile.getAbsolutePath() + "'>>>" + osName + "<<</a><br><br><br><br>");
         Reporter.log("<a href='" + destFile.getAbsolutePath() + "'> <img src='" + destFile.getAbsolutePath() + "' height='600' width='300'/> </a>");
 */
-        Reporter.log("<a href='" + destFile.getPath() + "'>>>" + osName + "<<</a><br><br><br><br>");
-        Reporter.log("<a href='" + destFile.getPath() + "'> <img src='" + destFile.getPath() + "' height='600' width='300'/> </a>");
-
-
+        Reporter.log(" <br><img src='data:image/png;base64," + base64img1 + "' height='600' width='300'/>");
     }
 
     public void takeElementScreenShot(MobileElement element, String osName) throws IOException {
