@@ -83,7 +83,6 @@ public class ScreenBase {
         File destFile = new File(System.getProperty("user.dir") +
                 "/ScreenShots/" + osName+"/"+ gtStamp.getCurrentTimeStamp() + ".jpg");
         FileUtils.copyFile(file, destFile);
-
         Reporter.log("<a href='" + destFile.getAbsolutePath() + "'>>>" + osName + "<<</a><br><br><br><br>");
         Reporter.log("<a href='" + destFile.getAbsolutePath() + "'> <img src='" + destFile.getAbsolutePath() + "' height='600' width='300'/> </a>");
 
