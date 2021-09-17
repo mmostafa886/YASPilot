@@ -20,7 +20,7 @@ import java.util.Base64;
 public class ScreenBase {
 
     public static AppiumDriver driver;
-    public static final long WAIT = 7;
+    public static final long WAIT = 8;
     GetTimeStamp gtStamp;
 
     public ScreenBase(AppiumDriver appiumDriver) {
