@@ -3,10 +3,7 @@ import ScreenObjects.ScreenBase;
 import ScreenObjects.SharedScreen;
 import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import utils.JsonValidLogin;
 
 import java.io.IOException;
@@ -19,6 +16,11 @@ public class LoginTest_AndroidSimulator extends TestBase{
     ScreenBase sBase;
 
 
+    @BeforeTest
+    public void driverSetup() throws IOException {
+        AndroidEmulator_setup();
+    }
+
     @DataProvider(name = "LoginData")
     public Object[][] passData() throws Exception {
         return JsonValidLogin.getJsonData
@@ -27,8 +29,7 @@ public class LoginTest_AndroidSimulator extends TestBase{
     }
 
     @Test(dataProvider = "LoginData")
-    public void login(String eMail, String pWord, String hText) throws IOException {
-        AndroidEmulator_setup();
+    public void login(String eMail, String pWord, String hText) {
         lgnScrn = new LoginScreen(driver);
         shrdScrn = new SharedScreen(driver);
         sBase = new ScreenBase(driver);
@@ -45,9 +46,10 @@ public class LoginTest_AndroidSimulator extends TestBase{
         Assert.assertTrue((shrdScrn.getAttribute(shrdScrn.screenHeader, "text").contains(hText)));
     }
 
-    @AfterMethod
+   // @AfterMethod
+    //To be removed in the future after adding practical TCs if we don't need it
     public void takeScreenShotOnFailure(ITestResult iTestResult) throws Exception {
-   /*     sBase = new ScreenBase(driver);
+       sBase = new ScreenBase(driver);
        // sBase.takeScreenShot("Android"); //To take screenshot whatever the test result is
 
         //The following Try & Catch are for taking screenshot in case of failure
@@ -59,7 +61,7 @@ public class LoginTest_AndroidSimulator extends TestBase{
             }
         } catch (Exception e) {
         }
-*/
+
         tearDown();
 
     }

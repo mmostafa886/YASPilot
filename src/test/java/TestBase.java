@@ -15,7 +15,7 @@ import java.net.URL;
 public class TestBase{
 
     public static AppiumDriver driver;
-
+    public static String appCenterDownloadURL;
 
 
     public String getDownloadURL(String urlCall) throws IOException {
@@ -26,6 +26,7 @@ public class TestBase{
         // Now it's "open", we can set the request method, headers etc.
         connection.setRequestProperty("accept", "application/json");
         connection.setRequestProperty("X-API-Token", "cd83fe1ee71031be591aca48f1808fa45ea4f0a8");
+        //This the API Token for a user privileged to download apps from the app center, must have the download privilege only
         // This line makes the request
         InputStream responseStream = connection.getInputStream();
         // Manually converting the response body InputStream to APOD using Jackson
@@ -34,12 +35,13 @@ public class TestBase{
         JACProcessor parcedJson = mapper.readValue(responseStream, JACProcessor.class);
         // Finally we have the response
         System.out.println(parcedJson.download_url);
+        //Return the download_url from the app center api response which can be used as a desired capability to download the app & start the driver
         return parcedJson.download_url;
     }
 
 
     public void AndroidEmulator_setup() throws IOException {
-
+        appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
@@ -47,7 +49,7 @@ public class TestBase{
         caps.setCapability("deviceName", "NexusAndroid9");
         caps.setCapability("avd","NexusAndroid9");
         caps.setCapability("isHeadless", true);
-        caps.setCapability("app" , getDownloadURL(("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest")));
+        caps.setCapability("app" , appCenterDownloadURL);
 
        // caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
