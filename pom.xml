@@ -118,7 +118,7 @@
                         <version>2.22.2</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>iOS_testng.xml</suiteXmlFile>
+                                <suiteXmlFile>iOS_TestNG.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
@@ -135,7 +135,7 @@
                         <version>2.22.2</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>android_testng.xml</suiteXmlFile>
+                                <suiteXmlFile>Android_TestNG.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
@@ -152,7 +152,7 @@
                         <version>2.22.2</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>androidsimu_testng.xml</suiteXmlFile>
+                                <suiteXmlFile>AndroidSimu_TestNG.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
