@@ -46,8 +46,8 @@ public class TestBase{
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "9");
-        caps.setCapability("deviceName", "emulator-5554");
-        caps.setCapability("avd","emulator-5554");
+        caps.setCapability("deviceName", "Adnroid9");
+        caps.setCapability("avd","Adnroid9");
         caps.setCapability("isHeadless", true);
         caps.setCapability("app" , appCenterDownloadURL);
 
