@@ -53,7 +53,7 @@ public class TestBase{
         caps.setCapability("appWaitDuration" , 100000);
         caps.setCapability("deviceReadyTimeout" , 100);
         caps.setCapability("androidDeviceReadyTimeout" , 100);
-        caps.setCapability("androidInstallTimeout" , 100000);
+        //caps.setCapability("androidInstallTimeout" , 100000);
         caps.setCapability("avdLaunchTimeout" , 180000);
         caps.setCapability("avdReadyTimeout" , 180000);
         caps.setCapability("androidInstallTimeout" , 100000);
