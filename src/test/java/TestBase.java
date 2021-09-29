@@ -46,8 +46,8 @@ public class TestBase{
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "9");
-        caps.setCapability("deviceName", "Nexus6");
-        caps.setCapability("avd","Nexus6");
+        caps.setCapability("deviceName", "NexusS");
+        caps.setCapability("avd","NexusS");
         //caps.setCapability("isHeadless", true);
         caps.setCapability("app" , appCenterDownloadURL);
         caps.setCapability("appWaitDuration" , 10000);
