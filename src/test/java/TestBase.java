@@ -57,6 +57,7 @@ public class TestBase{
         caps.setCapability("avdLaunchTimeout" , 180000);
         caps.setCapability("avdReadyTimeout" , 180000);
         caps.setCapability("androidInstallTimeout" , 100000);
+        caps.setCapability("adbExecTimeout" , 10000);
 
        // caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
