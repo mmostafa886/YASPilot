@@ -45,14 +45,18 @@ public class TestBase{
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("platformVersion", "9");
-        caps.setCapability("deviceName", "NexusS");
-        caps.setCapability("avd","NexusS");
+        caps.setCapability("platformVersion", "10");
+        caps.setCapability("deviceName", "Android10");
+        caps.setCapability("avd","10");
         //caps.setCapability("isHeadless", true);
         caps.setCapability("app" , appCenterDownloadURL);
-        caps.setCapability("appWaitDuration" , 10000);
+        caps.setCapability("appWaitDuration" , 100000);
         caps.setCapability("deviceReadyTimeout" , 100);
         caps.setCapability("androidDeviceReadyTimeout" , 100);
+        caps.setCapability("androidInstallTimeout" , 100000);
+        caps.setCapability("avdLaunchTimeout" , 180000);
+        caps.setCapability("avdReadyTimeout" , 180000);
+        caps.setCapability("androidInstallTimeout" , 100000);
 
        // caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
