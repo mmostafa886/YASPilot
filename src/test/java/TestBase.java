@@ -50,6 +50,9 @@ public class TestBase{
         caps.setCapability("avd","Nexus6");
         //caps.setCapability("isHeadless", true);
         caps.setCapability("app" , appCenterDownloadURL);
+        caps.setCapability("appWaitDuration" , 7000);
+        caps.setCapability("deviceReadyTimeout" , 60);
+        caps.setCapability("androidDeviceReadyTimeout" , 70);
 
        // caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
