@@ -51,13 +51,13 @@ public class TestBase{
         //caps.setCapability("isHeadless", true);
         caps.setCapability("app" , appCenterDownloadURL);
         caps.setCapability("appWaitDuration" , 100000);
-        caps.setCapability("deviceReadyTimeout" , 100);
-        caps.setCapability("androidDeviceReadyTimeout" , 100);
+        caps.setCapability("deviceReadyTimeout" , 1000);
+        caps.setCapability("androidDeviceReadyTimeout" , 1000);
         //caps.setCapability("androidInstallTimeout" , 100000);
         caps.setCapability("avdLaunchTimeout" , 180000);
         caps.setCapability("avdReadyTimeout" , 180000);
         caps.setCapability("androidInstallTimeout" , 100000);
-        caps.setCapability("adbExecTimeout" , 10000);
+        caps.setCapability("adbExecTimeout" , 100000);
 
        // caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
