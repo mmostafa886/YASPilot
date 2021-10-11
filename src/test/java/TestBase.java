@@ -47,7 +47,7 @@ public class TestBase{
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "10");
         caps.setCapability("deviceName", "Android10");
-        caps.setCapability("avd","Android10");
+        //caps.setCapability("avd","Android10");
         caps.setCapability("isHeadless", true);
        caps.setCapability("app" , appCenterDownloadURL);
         caps.setCapability("appWaitDuration" , 100000);
