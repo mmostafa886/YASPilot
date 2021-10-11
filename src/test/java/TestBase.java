@@ -41,7 +41,7 @@ public class TestBase{
 
 
     public void AndroidEmulator_setup() throws IOException {
-       appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
+     //  appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
@@ -49,7 +49,7 @@ public class TestBase{
         caps.setCapability("deviceName", "Android10");
         //caps.setCapability("avd","Android10");
         caps.setCapability("isHeadless", true);
-       caps.setCapability("app" , appCenterDownloadURL);
+      // caps.setCapability("app" , appCenterDownloadURL);
         caps.setCapability("appWaitDuration" , 100000);
         caps.setCapability("deviceReadyTimeout" , 10000);
         caps.setCapability("androidDeviceReadyTimeout" , 10000);
@@ -59,7 +59,7 @@ public class TestBase{
         caps.setCapability("androidInstallTimeout" , 100000);
        // caps.setCapability("adbExecTimeout" , 1000000);
 
-       //caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
+       caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
     }
