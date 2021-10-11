@@ -59,7 +59,7 @@ public class TestBase{
         caps.setCapability("androidInstallTimeout" , 100000);
         caps.setCapability("adbExecTimeout" , 1000000);
 
-       //caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
+       caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
     }
