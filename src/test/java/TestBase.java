@@ -45,8 +45,8 @@ public class TestBase{
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("platformVersion", "10");
-        caps.setCapability("deviceName", "Android10");
+        caps.setCapability("platformVersion", "11");
+        caps.setCapability("deviceName", "Android11");
         //caps.setCapability("avd","Android10");
         caps.setCapability("isHeadless", true);
       // caps.setCapability("app" , appCenterDownloadURL);
@@ -58,6 +58,8 @@ public class TestBase{
         caps.setCapability("avdReadyTimeout" , 200000);
         caps.setCapability("androidInstallTimeout" , 1000000);
        // caps.setCapability("adbExecTimeout" , 1000000);
+        caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
+
 
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
