@@ -63,7 +63,7 @@ public class TestBase{
 
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
-        driver = new AndroidDriver(new URL("http://127.0.1.1:4723/wd/hub"),caps);
+        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
     }
 
     public static void Android_Setup() throws MalformedURLException {
