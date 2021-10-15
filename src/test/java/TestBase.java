@@ -4,9 +4,11 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import utils.JACProcessor;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -17,7 +19,7 @@ public class TestBase{
 
     public static AppiumDriver driver;
     public static String appCenterDownloadURL;
-    public static AppiumDriverLocalService service=null;
+    public static AppiumDriverLocalService service;
 
 
     public String getDownloadURL(String urlCall) throws IOException {
@@ -44,7 +46,11 @@ public class TestBase{
 
     public void AndroidEmulator_setup() throws IOException {
      //  appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
-        service = AppiumDriverLocalService.buildDefaultService();
+        //service = AppiumDriverLocalService.buildDefaultService();
+        service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().withAppiumJS(
+                new File("/home/yaslife/.nvm/versions/node/v14.17.6/lib/node_modules/appium/build/lib/main.js")));
+        service.start();
+        //////////////
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
@@ -62,12 +68,8 @@ public class TestBase{
         caps.setCapability("androidInstallTimeout" , 1000000);
         caps.setCapability("adbExecTimeout" , 1000000);
         caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
-
-
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
-
-       service.start();
-        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
+       driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
     }
 
     public static void Android_Setup() throws MalformedURLException {
