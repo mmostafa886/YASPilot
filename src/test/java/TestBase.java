@@ -48,7 +48,7 @@ public class TestBase{
      //  appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
         //service = AppiumDriverLocalService.buildDefaultService();
         service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().withAppiumJS(
-                new File("/home/yaslife/.nvm/versions/node/v14.17.6/lib/node_modules/appium/build/lib/main.js")));
+                new File("/home/yaslife/.nvm/versions/node/v16.11.1/lib/node_modules/appium/build/lib/main.js")));
         service.start();
         //////////////
         DesiredCapabilities caps = new DesiredCapabilities();
