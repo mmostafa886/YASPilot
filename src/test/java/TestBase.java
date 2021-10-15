@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import utils.JACProcessor;
 
@@ -16,6 +17,7 @@ public class TestBase{
 
     public static AppiumDriver driver;
     public static String appCenterDownloadURL;
+    public static AppiumDriverLocalService service=null;
 
 
     public String getDownloadURL(String urlCall) throws IOException {
@@ -63,6 +65,7 @@ public class TestBase{
 
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
 
+       service.start();
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
     }
 
