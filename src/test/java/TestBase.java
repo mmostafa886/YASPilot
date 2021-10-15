@@ -50,7 +50,7 @@ public class TestBase{
         //caps.setCapability("avd","Android10");
         caps.setCapability("isHeadless", true);
       // caps.setCapability("app" , appCenterDownloadURL);
-        caps.setCapability("appWaitDuration" , 100000);
+/*        caps.setCapability("appWaitDuration" , 100000);
         caps.setCapability("deviceReadyTimeout" , 10000);
         caps.setCapability("androidDeviceReadyTimeout" , 10000);
         caps.setCapability("androidInstallTimeout" , 100000);
@@ -58,7 +58,7 @@ public class TestBase{
         caps.setCapability("avdReadyTimeout" , 200000);
         caps.setCapability("androidInstallTimeout" , 1000000);
         caps.setCapability("adbExecTimeout" , 1000000);
-        caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
+        caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);*/
 
 
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
