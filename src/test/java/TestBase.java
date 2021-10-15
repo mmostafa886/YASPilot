@@ -57,7 +57,7 @@ public class TestBase{
         caps.setCapability("avdLaunchTimeout" , 200000);
         caps.setCapability("avdReadyTimeout" , 200000);
         caps.setCapability("androidInstallTimeout" , 1000000);
-       // caps.setCapability("adbExecTimeout" , 1000000);
+        caps.setCapability("adbExecTimeout" , 1000000);
       //  caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
 
 
