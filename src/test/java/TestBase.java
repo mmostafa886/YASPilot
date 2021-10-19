@@ -46,7 +46,7 @@ public class TestBase{
 
 
     public void AndroidEmulator_setup() throws IOException {
-     //  appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
+      appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
 /*        builder.withIPAddress("0.0.0.0");
         builder.usingPort(4723);
@@ -64,17 +64,16 @@ public class TestBase{
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "11");
         caps.setCapability("deviceName", "Android11");
-        //caps.setCapability("avd","Android10");
         caps.setCapability("isHeadless", true);
-      // caps.setCapability("app" , appCenterDownloadURL);
-        caps.setCapability("appWaitDuration" , 100000);
+       caps.setCapability("app" , appCenterDownloadURL);
+/*        caps.setCapability("appWaitDuration" , 100000);
         caps.setCapability("deviceReadyTimeout" , 10000);
         caps.setCapability("androidDeviceReadyTimeout" , 10000);
         caps.setCapability("androidInstallTimeout" , 100000);
         caps.setCapability("avdLaunchTimeout" , 200000);
         caps.setCapability("avdReadyTimeout" , 200000);
         caps.setCapability("androidInstallTimeout" , 1000000);
-        caps.setCapability("adbExecTimeout" , 1000000);
+        caps.setCapability("adbExecTimeout" , 1000000);*/
         //caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
