@@ -49,9 +49,9 @@ public class TestBase{
      //  appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
         //service = AppiumDriverLocalService.buildDefaultService();
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
-        builder.withIPAddress("0.0.0.0");
+/*        builder.withIPAddress("0.0.0.0");
         builder.usingPort(4723);
-        builder.withEnvironment(System.getenv());
+        builder.withEnvironment(System.getenv());*/
         builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
         builder.withArgument(GeneralServerFlag.LOG_LEVEL,"debug");
         service = AppiumDriverLocalService.buildService(builder
