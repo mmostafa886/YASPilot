@@ -53,7 +53,7 @@ public class TestBase{
         builder.usingPort(4723);
         builder.withEnvironment(System.getenv());*/
         builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
-        builder.withArgument(GeneralServerFlag.LOG_LEVEL,"debug");
+        builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
         service = AppiumDriverLocalService.buildService(builder
                 .withAppiumJS(new File("/home/yaslife/.nvm/versions/node/v16.11.1/lib/node_modules/appium/build/lib/main.js"))
                     .usingDriverExecutable(new File("/home/yaslife/.nvm/versions/node/v16.11.1/bin/node")));
@@ -111,7 +111,6 @@ public class TestBase{
     }
 
     public void tearDown() {
-        service.stop();
         if (null != driver) {
             driver.quit();
         }
