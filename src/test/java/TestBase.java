@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import utils.JACProcessor;
 
@@ -47,7 +48,12 @@ public class TestBase{
     public void AndroidEmulator_setup() throws IOException {
      //  appCenterDownloadURL = getDownloadURL("https://api.appcenter.ms/v0.1/sdk/apps/a5e5ecd6-cb6f-4a06-9ab2-3c29a1edfe9b/releases/private/latest");
         //service = AppiumDriverLocalService.buildDefaultService();
-        service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
+        AppiumServiceBuilder builder = new AppiumServiceBuilder();
+        builder.withIPAddress("0.0.0.0");
+        builder.usingPort(4723);
+        builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
+        builder.withArgument(GeneralServerFlag.LOG_LEVEL,"debug");
+        service = AppiumDriverLocalService.buildService(builder
                 .withAppiumJS(new File("/home/yaslife/.nvm/versions/node/v16.11.1/lib/node_modules/appium/build/lib/main.js"))
                     .usingDriverExecutable(new File("/home/yaslife/.nvm/versions/node/v16.11.1/bin/node")));
         service.start();
