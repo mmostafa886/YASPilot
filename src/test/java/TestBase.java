@@ -59,6 +59,7 @@ public class TestBase{
                     .usingDriverExecutable(new File("/home/yaslife/.nvm/versions/node/v16.11.1/bin/node")));
         service.start();
         //////////////
+
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
