@@ -51,6 +51,7 @@ public class TestBase{
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
         builder.withIPAddress("0.0.0.0");
         builder.usingPort(4723);
+        builder.withEnvironment(System.getenv());
         builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
         builder.withArgument(GeneralServerFlag.LOG_LEVEL,"debug");
         service = AppiumDriverLocalService.buildService(builder
