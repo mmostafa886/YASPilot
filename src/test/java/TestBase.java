@@ -75,7 +75,7 @@ public class TestBase{
         caps.setCapability("avdReadyTimeout" , 200000);
         caps.setCapability("androidInstallTimeout" , 1000000);
         caps.setCapability("adbExecTimeout" , 1000000);
-        caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
+        //caps.setCapability("uiautomator2ServerInstallTimeout" , 1000000);
        caps.setCapability("app" , System.getProperty("user.dir")+"/apps/app-sbk-releaseStaging.apk");
        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
     }
