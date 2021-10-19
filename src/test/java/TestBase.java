@@ -52,12 +52,12 @@ public class TestBase{
 /*        builder.withIPAddress("0.0.0.0");
         builder.usingPort(4723);
         builder.withEnvironment(System.getenv());*/
-/*        builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
+        builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
         builder.withArgument(GeneralServerFlag.LOG_LEVEL,"debug");
         service = AppiumDriverLocalService.buildService(builder
                 .withAppiumJS(new File("/home/yaslife/.nvm/versions/node/v16.11.1/lib/node_modules/appium/build/lib/main.js"))
                     .usingDriverExecutable(new File("/home/yaslife/.nvm/versions/node/v16.11.1/bin/node")));
-        service.start();*/
+        service.start();
         //////////////
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
