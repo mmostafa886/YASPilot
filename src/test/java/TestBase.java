@@ -104,8 +104,8 @@ public class TestBase{
     }
 
     public void tearDown() {
+        service.stop();
         if (null != driver) {
-            driver.resetApp();
             driver.quit();
         }
 

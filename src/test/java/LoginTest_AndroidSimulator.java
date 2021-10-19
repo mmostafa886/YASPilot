@@ -68,6 +68,7 @@ public class LoginTest_AndroidSimulator extends TestBase{
 
     @AfterTest
     public void quitDriver(){
+        service.stop();
         if (null != driver) {
             driver.quit();
         }
